@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas</title>
+</head>
+<body>
+    <script>
+        // Alert
+        alert("Ini adalah pesan alert!");
+
+        // Prompt
+        var nama = prompt("Masukkan nama Anda:");
+        alert("Halo, " + nama + "!");
+
+         // Confirm
+         var konfirmasi = confirm("Apakah Anda yakin?");
+        if (konfirmasi) {
+            alert("Anda memilih OK!");
+        } else {
+            alert("Anda memilih Cancel!");
+        }
+        
+        // Form
+        function submitForm() {
+            var nama = document.getElementById("nama").value;
+            var email = document.getElementById("email").value;
+            alert("Terima kasih, " + nama + "! Email Anda adalah " + email + ".");
+        }
+    </script>
+</body>
+</html>
