@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 style="text-align: center;">Menghitung Luas Trapesium</h3>
+    <form>
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="">Garis Atas </label></td>
+                    <td> : <span id="tempel"></span> <button id="tombol">Isi Garis Atas</button></td>
+                </tr>
+                <tr>
+                    <td><label for="">Garis Bawah </label></td>
+                    <td> : <input type="text" name="bawah" id="bawah"></td>
+                </tr>
+                <tr>
+                    <td> <label for="tinggi">Tinggi </label></td>
+                    <td> : <input type="text" name="tinggi" id="tinggi"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>. <button id="hitung">Hitung</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script>
+        document.getElementById("tombol").addEventListener("click", function(event){
+            event.preventDefault();
+            let isi = prompt('Isi angka untuk Garis Atas ');
+            if(isi != null){
+                document.getElementById('tempel').innerText = isi;
+            }
+
+        })
+        document.getElementById("hitung").addEventListener("click", function(event){
+            event.preventDefault()
+            let text = "Confirmasi hitung luas Trapesium";
+            if(confirm(text)){
+                let gAtas = document.getElementById('tempel').textContent;
+                let getBawah = document.getElementById('bawah');
+                let bawah = getBawah.value;
+                let getTinggi = document.getElementById('tinggi');
+                let tinggi = getTinggi.value;
+                let hasil = (1/2 * parseInt(tinggi) )* (parseInt(gAtas) + parseInt(bawah));
+                alert("Luas dari Trapesium 1/2 x Tinggi x ( Garis Atas + Garis Bawah)\n Luas = 1/2 x "+tinggi+" x ( "+gAtas+" + "+bawah+" )= "+hasil+"")
+            } else {
+                alert("Tidak jadi menghitung");
+            }
+        })
+    </script>
+</body>
+</html>

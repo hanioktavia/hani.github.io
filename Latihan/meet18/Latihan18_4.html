@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Latihan dengan Objek Radio</title>
+    </head>
+    <body>
+        <p>Sum of all arguments:</p>
+        <p id="coba"></p>
+
+        <script>
+            function sumAll(){
+                var i;
+                var sum = 0;
+                for(i=0;i<arguments.length;i++){
+                    sum +=arguments[i];
+                }
+                return sum;
+            }
+            document.getElementById("coba").innerHTML = sumAll(10, 127, 400, 125, 34, 78);
+        </script>
+    </body>
+</html>

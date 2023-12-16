@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Deret Bilangan</title>
+</head>
+<body>
+    <script>
+        let awal = prompt("Masukan nilai Awal");
+        let akhir = prompt("Masukan Nilai Akhir");
+        let nilaiAwal = parseInt(awal);
+        let nilaiAkhir = parseInt(akhir);
+        let genap = [];
+        let deret = [];
+        let result = "";
+        let jumlah = 0;
+        for (let index = nilaiAwal; index <= nilaiAkhir; index++) {
+            if(index%2 == 0){
+                genap.push(index);
+            }   
+        }
+        genap.forEach((n)=>{
+            if(n%3 == 0){
+                deret.push(n)
+            }
+        })
+        deret.forEach((hasil)=> {
+            result += hasil+", ";
+            jumlah += hasil;
+        })
+        document.write('<h4>Deret bilangan genap yang habis dibagi 3</h4>')
+        document.write(
+    `<pre>
+        Nilai Awal          : `+nilaiAwal+`
+        Nilai Akhir         : `+nilaiAkhir+`
+        Deret Yang Tampil   : `+result+`
+        Jumlah deret bilangan           : `+deret.length+` bilangan 
+        Jumlah nilai bilangan tersebut  : `+jumlah+`
+    
+    </pre>`)
+    </script>
+</body>
+</html>

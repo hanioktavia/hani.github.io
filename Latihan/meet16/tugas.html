@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <h1>Kalkulator Sederhana</h1>
+    <pre>
+    Nilai I: <input type="number" id="nilai1" name="nilai1"> Nilai II: <input type="number" id="nilai2" name="nilai2"><label for="operator"></label><select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option> <br>
+    </select> <button onclick="hitung()">Submit</button>
+    </pre> Hasil:
+    <input type="number" id="hasil" name="hasil" readonly>
+    <hr>
+    <h3>&copy;Created by Hani Oktavia</h3>
+    <script>
+        function hitung() {
+            var nilai1 = document.getElementById('nilai1').value;
+            var nilai2 = document.getElementById('nilai2').value;
+            var operator = document.getElementById('operator').value;
+            var hasilElem = document.getElementById('hasil');
+
+            switch (operator) {
+                case '+':
+                    hasilElem.value = parseInt(nilai1) + parseInt(nilai2);
+                    break;
+                case '-':
+                    hasilElem.value = parseInt(nilai1) - parseInt(nilai2);
+                    break;
+                case '*':
+                    hasilElem.value = parseInt(nilai1) * parseInt(nilai2);
+                    break;
+                case '/':
+                    if (parseInt(nilai2) !== 0) {
+                        hasilElem.value = parseInt(nilai1) / parseInt(nilai2);
+                    } else {
+                        alert("Tidak Bisa Dibagi Dengan Nol");
+                    }
+                    break;
+                default:
+                    alert("Operasi tidak valid");
+            }
+            alert(nilai1 + " " + operator + " " + nilai2 + " = " + hasilElem.value);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <h4>Kalkulator Sederhana</h4>
+    <div style="margin-top: 20px;"> 
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="">Angka 1</label></td>
+                    <td>: <input type="number" id="angka1"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Angka 2</label></td>
+                    <td>: <input type="number" id="angka2"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Hasil </label></td>
+                    <td>: <input type="text" id="hasil" disabled></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> 
+                        <button onclick="hitung('tambah')" style="margin-left: 7px;">+</button>
+                        <button onclick="hitung('kurang')" style="margin-left: 7px;">-</button>
+                        <button onclick="hitung('kali')"  style="margin-left: 7px;">x</button>
+                        <button onclick="hitung('bagi')"  style="margin-left: 7px;">/</button>
+                        <button onclick="hitung('pangkat')"  style="margin-left: 7px;">^</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function hitung(operator){
+            let string1 = document.getElementById('angka1').value || null;
+            let string2 = document.getElementById('angka2').value || null;
+            let angka1 = parseInt(string1);
+            let angka2 = parseInt(string2);
+            let hasil;
+            if(string1 != null && string2 != null){
+                switch (operator) {
+                    case 'tambah':
+                        hasil = angka1+angka2;                    
+                        break;
+                    case 'kurang':
+                        hasil = angka1-angka2;
+                        break;
+                    case 'kali':
+                        hasil = angka1*angka2;
+                        break;
+                    case 'bagi':
+                        if(angka2 == 0){
+                            hasil = 'Hasil tidak terdefinisi';
+                        } else {
+                            hasil = angka1/angka2;
+                        }
+                        break;
+                    case 'pangkat':
+                        hasil = angka1**angka2;
+                        break;
+                }
+                document.getElementById('hasil').value = hasil;
+            } else {
+                alert('Isi Kedua inputan dengan angka')
+            }
+        }
+    </script>
+</body>
+</html>
